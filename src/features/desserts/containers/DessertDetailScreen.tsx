@@ -91,11 +91,10 @@ const DessertDetailScreen: React.FC = () => {
             size="xl"
             borderRadius={25}
             height={50}
-            isDisabled={!!error || loading}>
+            isDisabled={!!error || loading}
+            onPress={handlePurchase}>
             <ButtonIcon as={BagIcon} mr="$2" />
-            <ButtonText fontWeight="200" onPress={handlePurchase}>
-              Comprar
-            </ButtonText>
+            <ButtonText fontWeight="200">Comprar</ButtonText>
           </Button>
         </HStack>
       </View>
