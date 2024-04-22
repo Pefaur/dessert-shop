@@ -49,7 +49,7 @@ const IngredientActionSheet: React.FC<{
 
 const styles = StyleSheet.create({
   actionsheetContent: {
-    zIndex: 999,
+    zIndex: 10,
   },
   itemContainer: {
     flexDirection: 'row',
