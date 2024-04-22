@@ -1,18 +1,9 @@
 import React, {useCallback, useState} from 'react';
 import {View, FlatList, Text, StyleSheet} from 'react-native';
 import {useFocusEffect} from '@react-navigation/native';
-import {
-  Avatar,
-  AvatarFallbackText,
-  Box,
-  Card,
-  HStack,
-  VStack,
-  AvatarImage,
-} from '@gluestack-ui/themed';
 import usePurchase from '../../desserts/hooks/usePurchase';
-import {formatNumber, getInitials} from '../../../utils';
 import ListEmpty from '../../desserts/components/ListEmpty';
+import OrderListItem from '../components/OrderListItem';
 
 const OrdersScreen: React.FC = () => {
   const {getPurchaseHistory} = usePurchase();
@@ -39,35 +30,8 @@ const OrdersScreen: React.FC = () => {
         }
         data={orders}
         keyExtractor={(item, index) => index.toString()}
-        renderItem={({item: {dessert, quantity}}) => (
-          <Box py={6} px={3}>
-            <Card>
-              <HStack>
-                <Avatar mr="$3">
-                  <AvatarFallbackText fontFamily="$heading">
-                    {getInitials(dessert?.strMeal)}
-                  </AvatarFallbackText>
-                  {dessert?.strMealThumb && (
-                    <AvatarImage
-                      alt={dessert?.strMeal}
-                      source={{
-                        uri: dessert?.strMealThumb,
-                      }}
-                    />
-                  )}
-                </Avatar>
-                <VStack space="xs">
-                  <Text
-                    style={
-                      styles.name
-                    }>{`${dessert?.strMeal} (${quantity})`}</Text>
-                  <Text style={styles.price}>
-                    {formatNumber(dessert?.idMeal * quantity)}
-                  </Text>
-                </VStack>
-              </HStack>
-            </Card>
-          </Box>
+        renderItem={({item}) => (
+          <OrderListItem dessert={item.dessert} quantity={item.quantity} />
         )}
       />
     </View>
