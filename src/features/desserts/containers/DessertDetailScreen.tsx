@@ -21,6 +21,7 @@ import DessertDetailCard from '../components/DessertDetailCard';
 import usePurchase from '../hooks/usePurchase';
 import IngredientActionSheet from '../components/IngredientActionSheet';
 import {DessertStackParamList} from '../../../navigation/NavigationParams';
+import TransparentNavBar from '../../../components/TransparentNavBar';
 
 const DessertDetailScreen: React.FC = () => {
   const {navigate} =
@@ -43,22 +44,8 @@ const DessertDetailScreen: React.FC = () => {
 
   return (
     <View flex={1} backgroundColor="white">
-      <Box
-        zIndex={1}
-        position="absolute"
-        top={0}
-        left={0}
-        width="100%"
-        height={38}
-        backgroundColor="#000"
-        opacity={0.2}
-      />
+      <TransparentNavBar />
       <ScrollView flex={1} showsVerticalScrollIndicator={false}>
-        <StatusBar
-          translucent
-          backgroundColor="transparent"
-          barStyle="light-content"
-        />
         <DessertDetailCard
           id={dessert.idMeal}
           image={dessert.strMealThumb}
