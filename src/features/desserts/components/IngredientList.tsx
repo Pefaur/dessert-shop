@@ -1,5 +1,6 @@
 import React from 'react';
-import {Box, Card, Text, VStack} from '@gluestack-ui/themed';
+import {StyleSheet} from 'react-native';
+import {Card, HStack, Text, VStack} from '@gluestack-ui/themed';
 import {Ingredient} from '../../../types';
 
 const IngredientList: React.FC<{ingredients: Ingredient[]}> = ({
@@ -9,14 +10,23 @@ const IngredientList: React.FC<{ingredients: Ingredient[]}> = ({
     <VStack flex={1} space="sm" mt={20}>
       {ingredients.map((ingredient, index) => (
         <Card key={index}>
-          <VStack>
-            <Text bold>{ingredient.name}</Text>
+          <HStack space="md" style={styles.hStack}>
+            <Text style={styles.ingredientName}>{ingredient.name}</Text>
             <Text>{ingredient.measure}</Text>
-          </VStack>
+          </HStack>
         </Card>
       ))}
     </VStack>
   );
 };
+
+const styles = StyleSheet.create({
+  hStack: {
+    justifyContent: 'space-between',
+  },
+  ingredientName: {
+    fontWeight: '300',
+  },
+});
 
 export default IngredientList;
