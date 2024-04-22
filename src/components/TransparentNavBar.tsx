@@ -7,7 +7,7 @@ const TransparentNavBar = () => {
       <StatusBar
         translucent
         backgroundColor="transparent"
-        barStyle="dark-content"
+        barStyle="light-content"
       />
       <Box
         zIndex={1}
