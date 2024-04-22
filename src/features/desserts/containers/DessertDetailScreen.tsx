@@ -11,6 +11,7 @@ import {
   View,
 } from '@gluestack-ui/themed';
 import {useNavigation, useRoute} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {Dessert} from '../../../types';
 import {formatNumber} from '../../../utils';
 import useDessertDetail from '../hooks/useDessertDetail';
@@ -19,7 +20,6 @@ import BagIcon from '../../../assets/icons/BagIcon';
 import DessertDetailCard from '../components/DessertDetailCard';
 import usePurchase from '../hooks/usePurchase';
 import IngredientActionSheet from '../components/IngredientActionSheet';
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {DessertStackParamList} from '../../../navigation/NavigationParams';
 
 const DessertDetailScreen: React.FC = () => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet} from 'react-native';
-import IngredientList from './IngredientList';
 import {Text, View} from '@gluestack-ui/themed';
+import IngredientList from './IngredientList';
 
 const IngredientSelectionStep = ({ingredients}) => {
   return (

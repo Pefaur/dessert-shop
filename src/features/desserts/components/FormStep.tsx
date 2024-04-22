@@ -1,11 +1,4 @@
-import {
-  Box,
-  FormControl,
-  Input,
-  InputField,
-  Text,
-  VStack,
-} from '@gluestack-ui/themed';
+import {Input, InputField, Text, VStack} from '@gluestack-ui/themed';
 import React, {useState, useEffect} from 'react';
 import {View, StyleSheet} from 'react-native';
 

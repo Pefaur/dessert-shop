@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
+import {Alert} from 'react-native';
 import {DessertDetail, ErrorResponse} from '../../../types';
 import DessertService from '../../../services/DessertService';
-import { Alert } from 'react-native';
 
 const useDessertDetail = (id: string) => {
   const [dessertDetail, setDessertDetail] = useState<DessertDetail>(
@@ -20,6 +20,7 @@ const useDessertDetail = (id: string) => {
       setError(catchError as ErrorResponse);
       Alert.alert('Error', 'No se pudo obtener el detalle del postre');
     } finally {
+      console.log('====.finally');
       setLoading(false);
     }
   };

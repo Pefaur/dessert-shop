@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import {useNavigation} from '@react-navigation/native';
 import CustomSlider from '../components/CustomSlider';
 import {Purchase} from '../../../types';
 import usePurchase from '../hooks/usePurchase';
@@ -6,11 +7,10 @@ import TransparentNavBar from '../../../components/TransparentNavBar';
 import IngredientSelectionStep from '../components/IngredientSelectionStep';
 import FormStep from '../components/FormStep';
 import SuccessStep from '../components/SuccessStep';
-import {useNavigation} from '@react-navigation/native';
 import {delay} from '../../../utils';
 
 const PurchaseProcessScreen: React.FC = () => {
-  const {reset, navigate} = useNavigation();
+  const {reset} = useNavigation();
   const [cart, setCart] = useState<Purchase>();
   const {getCart, completePurchase} = usePurchase();
   const [form, setForm] = useState({isValid: false, data: {}});

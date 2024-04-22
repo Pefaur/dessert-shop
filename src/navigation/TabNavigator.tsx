@@ -3,14 +3,13 @@ import {
   BottomTabNavigationOptions,
   createBottomTabNavigator,
 } from '@react-navigation/bottom-tabs';
-import DessertNavigator from './DessertNavigator';
-import OrderNavigator from './OrderNavigator';
 import {
   ParamListBase,
   RouteProp,
   getFocusedRouteNameFromRoute,
 } from '@react-navigation/native';
-import CheckoutNavigator from './CheckoutNavigator';
+import DessertNavigator from './DessertNavigator';
+import OrderNavigator from './OrderNavigator';
 
 const Tab = createBottomTabNavigator();
 

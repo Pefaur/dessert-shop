@@ -1,4 +1,5 @@
 import React from 'react';
+import {StyleSheet} from 'react-native';
 import {
   Actionsheet,
   ActionsheetBackdrop,
@@ -10,7 +11,6 @@ import {
   ActionsheetVirtualizedList,
   Text,
 } from '@gluestack-ui/themed';
-import {StyleSheet} from 'react-native';
 import {Ingredient} from '../../../types';
 
 const IngredientActionSheet: React.FC<{

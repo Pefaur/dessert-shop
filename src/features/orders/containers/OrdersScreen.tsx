@@ -1,5 +1,6 @@
 import React, {useCallback, useState} from 'react';
 import {View, FlatList, Text, StyleSheet} from 'react-native';
+import {useFocusEffect} from '@react-navigation/native';
 import {
   Avatar,
   AvatarFallbackText,
@@ -7,12 +8,11 @@ import {
   Card,
   HStack,
   VStack,
+  AvatarImage,
 } from '@gluestack-ui/themed';
 import usePurchase from '../../desserts/hooks/usePurchase';
 import {formatNumber, getInitials} from '../../../utils';
-import {AvatarImage} from '@gluestack-ui/themed';
 import ListEmpty from '../../desserts/components/ListEmpty';
-import {useFocusEffect} from '@react-navigation/native';
 
 const OrdersScreen: React.FC = () => {
   const {getPurchaseHistory} = usePurchase();
